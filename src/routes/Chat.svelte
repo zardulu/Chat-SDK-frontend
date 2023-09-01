@@ -3,7 +3,7 @@
     let newMessage = '';
     let chatHistory;
     let nextKey = 0; // Initialize key
-   
+    
     function sendMessage() {
       if (newMessage.trim() === '') return;
   
@@ -40,8 +40,13 @@
   
   
   
-  <div class="chat-container p-5 border rounded-lg w-96 h-96 flex flex-col justify-end bg-amber-50">
-    
+  <div class="chat-container fixed bottom-12 right-12 p-5 border rounded-lg w-96 h-96 flex flex-col bg-amber-50 mb-2">
+
+    <div class="bg-amber-50 text-black flex items-center">
+      <span class="w-2 h-2 bg-green-300 rounded-full mr-2"></span>
+      Online
+    </div>
+
     <div class="chat-history flex-grow overflow-y-auto mb-2" bind:this={chatHistory}>
 
       {#each messages as message (message.key)}
